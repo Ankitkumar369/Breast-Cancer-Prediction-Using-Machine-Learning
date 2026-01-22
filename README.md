@@ -1,87 +1,76 @@
-# Breast-Cancer-Prediction-Using-Machine-Learning
-This project focuses on building machine learning models to predict whether a breast tumor is malignant (M) or benign (B) using clinical diagnostic features.  The Wisconsin Breast Cancer dataset was used, which contains measurements computed from digitized images of fine needle aspirates (FNA) of breast masses. 
-Two supervised learning algorithms were implemented and compared:
+**🩺 Breast Cancer Prediction Using Machine Learning**
 
-Logistic Regression
+This project implements a machine learning–based system to predict whether a breast tumor is malignant or benign using diagnostic medical data.
 
-Support Vector Machine (SVM)
+Using the well-known Wisconsin Breast Cancer dataset, multiple classification models were trained and evaluated to determine the most effective approach. The final system achieves ~97% accuracy, demonstrating the potential of machine learning for assisting early cancer detection.
 
-📂 Dataset Information
+**🎯 Objectives**
 
-Source: Kaggle – Breast Cancer Dataset
+Analyze and preprocess clinical breast cancer data
 
-Total Samples: 569
+Train and evaluate classification models
 
-Features: 30 numerical diagnostic features
+Compare performance between algorithms
 
-Target Variable:
+Build a prediction system for new patient records
 
-M → Malignant (Cancerous)
+Demonstrate an end-to-end ML workflow suitable for real-world healthcare applications
 
-B → Benign (Non-cancerous)
-
-Class distribution:
-
-Benign: 357
-
-Malignant: 212
-
-⚙️ Workflow
+⚙️ Project Workflow
 
 The project follows a standard machine learning pipeline:
 
-1️⃣ Data Loading
+🔹 1. Data Loading & Cleaning
 
-CSV file loaded using Pandas.
+Loaded dataset using Pandas
 
-Dropped unnecessary identifier column (id).
+Removed unnecessary ID column
 
-2️⃣ Target Encoding
+Checked for missing values
 
-Converted diagnosis labels:
+🔹 2. Label Encoding
+
+Converted categorical diagnosis values:
 
 M → 1
 
 B → 0
 
-3️⃣ Train–Test Split
+🔹 3. Train–Test Split
 
-Dataset split into:
+Dataset split into 80% training and 20% testing
 
-80% Training
+Stratified sampling used to preserve class balance
 
-20% Testing
+🔹 4. Feature Scaling
 
-Stratified sampling used to preserve class balance.
+Applied StandardScaler to normalize feature ranges
 
-4️⃣ Feature Scaling
+Essential for distance-based models like SVM
 
-Standardization applied using StandardScaler.
+🤖 Models Implemented
 
-Required because models like Logistic Regression and SVM are sensitive to feature scale.
+Two supervised learning algorithms were trained:
 
-🤖 Models Trained
-🔵 Logistic Regression
+✅ Logistic Regression
 
-Linear classification model.
+Linear classification baseline
 
-Good baseline for medical prediction tasks.
+Fast and interpretable
 
-Accuracy achieved:
-👉 96.49%
+Accuracy: ~96.5%
 
-🟣 Support Vector Machine (SVM)
+✅ Support Vector Machine (SVM)
 
-Non-linear classifier with RBF kernel.
+RBF kernel used for non-linear classification
 
-Capable of capturing complex decision boundaries.
+Captures complex boundaries
 
-Accuracy achieved:
-👉 97.36%
+Accuracy: ~97.3%
 
-📊 Model Comparison
+📊 Performance Comparison
 Model	Accuracy
 Logistic Regression	96.49%
 Support Vector Machine	97.36%
 
-✔️ SVM performed slightly better than Logistic Regression on the test dataset.
+🏆 SVM achieved the best performance on this dataset.
