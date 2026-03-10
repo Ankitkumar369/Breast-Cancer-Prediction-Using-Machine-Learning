@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.preprocessing import StandardScaler
+import traceback
 
 
 @st.cache_data
@@ -104,5 +105,16 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+	try:
+		main()
+	except Exception as e:
+		tb = traceback.format_exc()
+		# when running in Streamlit show the traceback in the app
+		try:
+			st.error("An error occurred while running the app. See details below:")
+			st.text(tb)
+		except Exception:
+			# fallback to printing
+			print(tb)
+		raise
 
