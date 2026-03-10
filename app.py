@@ -43,7 +43,7 @@ def load_scaler(feature_df):
 
 
 def main():
-	st.title("Breast Cancer Prediction")
+	st.title("Breast Cancer Prediction App ")
 	st.write("Simple  app to predict breast cancer (malignant vs benign) using pre-trained models.")
 
 	df = load_data()
@@ -117,4 +117,5 @@ if __name__ == "__main__":
 			# fallback to printing
 			print(tb)
 		raise
+
 
